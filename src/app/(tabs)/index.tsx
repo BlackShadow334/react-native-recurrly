@@ -26,11 +26,13 @@ export default function App() {
       </Link>
       <Link
         href={{ pathname: "/subscriptions/[id]", params: { id: "spotify" } }}
+        className="mt-2 rounded bg-primary text-white p-1"
       >
         View Spotify Subscription
       </Link>
       <Link
         href={{ pathname: "/subscriptions/[id]", params: { id: "claudie" } }}
+        className="mt-2 rounded bg-primary text-white p-1"
       >
         View Claudie's Subscription
       </Link>
