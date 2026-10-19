@@ -1,17 +1,47 @@
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
+import { ThemedScreen } from "../../components/ThemedScreen";
+import { fontFamilies } from "../../theme/theme";
+import { useTheme } from "../../theme/ThemeProvider";
 
 const SignUp = () => {
+  const { theme } = useTheme();
+
   return (
-    <View className="flex-1 items-center justify-center bg-background">
-      <Text>Sign Up</Text>
-      <Link
-        href="/(auth)/sign-in"
-        className="mt-4 rounded bg-primary text-white p-4"
+    <ThemedScreen>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: theme.background,
+        }}
       >
-        Sign In
-      </Link>
-    </View>
+        <Text
+          style={{
+            color: theme.foreground,
+            fontFamily: fontFamilies.semibold,
+            fontSize: 20,
+          }}
+        >
+          Sign Up
+        </Text>
+        <Link
+          href="/(auth)/sign-in"
+          style={{
+            marginTop: 16,
+            borderRadius: 14,
+            backgroundColor: theme.accent,
+            color: theme.accentForeground,
+            padding: 16,
+            overflow: "hidden",
+            fontFamily: fontFamilies.semibold,
+          }}
+        >
+          Sign In
+        </Link>
+      </View>
+    </ThemedScreen>
   );
 };
 export default SignUp;

@@ -50,21 +50,3 @@
   --spacing-30: 120px;
 }
 /* stylelint-enable at-rule-no-unknown */
-
-@layer components {
-  .tabs-icon {
-    @apply size-12 items-center justify-center;
-  }
-
-  .tabs-pill {
-    @apply size-12 rounded-full items-center justify-center bg-transparent;
-  }
-
-  .tabs-active {
-    @apply bg-accent;
-  }
-
-  .tabs-glyph {
-    @apply size-6;
-  }
-}
