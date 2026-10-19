@@ -15,7 +15,7 @@ const netfix = require("../assets/icons/netflix.png");
 const notion = require("../assets/icons/notion.png");
 const openai = require("../assets/icons/openai.png");
 const plus = require("../assets/icons/plus.png");
-const settings = require("../assets/icons/settings.png");
+const settings = require("../assets/icons/setting.png");
 const spotify = require("../assets/icons/spotify.png");
 const wallet = require("../assets/icons/wallet.png");
 
