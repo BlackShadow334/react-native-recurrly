@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Image, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import { tabs } from "../../../constants/data";
 import { fontFamilies } from "../../theme/theme";
 import { useTheme } from "../../theme/ThemeProvider";
@@ -13,16 +13,16 @@ type TabIconProps = {
 const TabIcons = ({ focused, icon, tintColor }: TabIconProps) => (
   <View
     style={{
-      width: 40,
-      height: 40,
+      width: 36,
+      height: 32,
       alignItems: "center",
       justifyContent: "center",
     }}
   >
     <View
       style={{
-        width: 36,
-        height: 36,
+        width: 30,
+        height: 30,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 18,
@@ -32,8 +32,8 @@ const TabIcons = ({ focused, icon, tintColor }: TabIconProps) => (
       <Image
         source={icon}
         style={{
-          width: 22,
-          height: 22,
+          width: 20,
+          height: 20,
           opacity: focused ? 1 : 0.8,
           tintColor,
         }}
@@ -55,24 +55,37 @@ const TabsLayout = () => {
         tabBarLabelStyle: {
           fontFamily: fontFamilies.semibold,
           fontSize: 10,
-          marginTop: 2,
+          lineHeight: 12,
+          marginTop: 0,
         },
         tabBarItemStyle: {
-          paddingTop: 4,
-          paddingBottom: 2,
+          paddingTop: 0,
+          paddingBottom: 0,
         },
         tabBarStyle: {
-          backgroundColor: theme.surface,
-          borderTopColor: theme.border,
-          borderTopWidth: 1,
-          borderTopLeftRadius: 24,
-          borderTopRightRadius: 24,
+          backgroundColor: theme.background,
+          borderTopWidth: 0,
           elevation: 12,
           shadowColor: theme.foreground,
           shadowOffset: { width: 0, height: -4 },
           shadowOpacity: 0.12,
           shadowRadius: 12,
         },
+        tabBarBackground: () => (
+          <View
+            pointerEvents="none"
+            style={[
+              StyleSheet.absoluteFill,
+              {
+                backgroundColor: theme.surface,
+                borderColor: theme.border,
+                borderTopWidth: StyleSheet.hairlineWidth,
+                borderTopLeftRadius: 24,
+                borderTopRightRadius: 24,
+              },
+            ]}
+          />
+        ),
       }}
     >
       {tabs.map((tab: (typeof tabs)[number]) => (
