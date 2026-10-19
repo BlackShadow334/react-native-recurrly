@@ -37,7 +37,6 @@ export const themes = {
 export type AppTheme = (typeof themes)[ThemeMode];
 
 export const fontFamilies = {
-  light: "PlusJakartaSans-Light",
   regular: "PlusJakartaSans-Regular",
   medium: "PlusJakartaSans-Medium",
   semibold: "PlusJakartaSans-SemiBold",

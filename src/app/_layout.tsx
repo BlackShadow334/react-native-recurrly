@@ -4,7 +4,6 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider, useTheme } from "../theme/ThemeProvider";
-import "../../global.css";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,7 +14,6 @@ export const unstable_settings = {
 function RootNavigator() {
   const { theme, isReady } = useTheme();
   const [fontsLoaded, fontError] = useFonts({
-    "PlusJakartaSans-Light": require("../../assets/fonts/PlusJakartaSans-Light.ttf"),
     "PlusJakartaSans-Regular": require("../../assets/fonts/PlusJakartaSans-Regular.ttf"),
     "PlusJakartaSans-Medium": require("../../assets/fonts/PlusJakartaSans-Medium.ttf"),
     "PlusJakartaSans-SemiBold": require("../../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
